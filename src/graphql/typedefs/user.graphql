@@ -1,0 +1,26 @@
+type User {
+    id: ID!
+    username: String!
+    name: String!
+    age: Int!
+    password: String!
+    createdDate: Date
+    updatedDate: Date
+}
+
+type Query {
+    users: [User]
+    user(id: ID!): User
+}
+
+type Mutation {
+    join(input: joinPayload): User!
+    updateUser(authorId: ID!): String!
+}
+
+input joinPayload {
+    username: String!
+    name: String!
+    age: Int!
+    password: String!      
+}
